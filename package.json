@@ -2,7 +2,7 @@
     "name": "@xrepl/vscode",
     "displayName": "xrepl",
     "description": "xrepl integration for Visual Studio Code",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "publisher": "xrepl",
     "repository": {
         "type": "git",
