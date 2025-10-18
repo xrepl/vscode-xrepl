@@ -1,148 +1,161 @@
 {
-  "name": "@xrepl/vscode",
-  "displayName": "xrepl",
-  "description": "xrepl integration for Visual Studio Code",
-  "version": "0.0.1",
-  "publisher": "xrepl",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/xrepl/vscode-xrepl"
-  },
-  "engines": {
-    "vscode": "^1.85.0"
-  },
-  "categories": [
-    "Programming Languages",
-    "Other"
-  ],
-  "main": "./out/extension.js",
-  "contributes": {
-    "commands": [
-      {
-        "command": "xrepl.connect",
-        "title": "Connect to xrepl Server",
-        "category": "xrepl"
-      },
-      {
-        "command": "xrepl.connectTCP",
-        "title": "Connect to xrepl (TCP)",
-        "category": "xrepl"
-      },
-      {
-        "command": "xrepl.connectUnix",
-        "title": "Connect to xrepl (UNIX Socket)",
-        "category": "xrepl"
-      },
-      {
-        "command": "xrepl.disconnect",
-        "title": "Disconnect from xrepl",
-        "category": "xrepl"
-      },
-      {
-        "command": "xrepl.evalSelection",
-        "title": "Evaluate Selection in xrepl",
-        "category": "xrepl"
-      },
-      {
-        "command": "xrepl.evalFile",
-        "title": "Evaluate Entire File in xrepl",
-        "category": "xrepl"
-      },
-      {
-        "command": "xrepl.showSessions",
-        "title": "Show xrepl Sessions",
-        "category": "xrepl"
-      }
-    ],
-    "views": {
-      "explorer": [
-        {
-          "id": "xreplSessions",
-          "name": "xrepl Sessions"
-        }
-      ]
+    "name": "@xrepl/vscode",
+    "displayName": "xrepl",
+    "description": "xrepl integration for Visual Studio Code",
+    "version": "0.0.1",
+    "publisher": "xrepl",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/xrepl/vscode-xrepl"
     },
-    "viewsWelcome": [
-      {
-        "view": "xreplSessions",
-        "contents": "No xrepl connection active.\n[Connect to xrepl](command:xrepl.connect)"
-      }
-    ],
-    "configuration": {
-      "title": "xrepl",
-      "properties": {
-        "xrepl.connection.type": {
-          "type": "string",
-          "enum": ["tcp", "unix"],
-          "default": "tcp",
-          "description": "Default connection type for xrepl"
-        },
-        "xrepl.connection.tcp.host": {
-          "type": "string",
-          "default": "localhost",
-          "description": "TCP host for xrepl connection"
-        },
-        "xrepl.connection.tcp.port": {
-          "type": "number",
-          "default": 7888,
-          "description": "TCP port for xrepl connection"
-        },
-        "xrepl.connection.unix.socket": {
-          "type": "string",
-          "default": "/tmp/xrepl.sock",
-          "description": "UNIX domain socket path for xrepl connection"
-        },
-        "xrepl.autoConnect": {
-          "type": "boolean",
-          "default": false,
-          "description": "Automatically connect to xrepl on startup"
-        },
-        "xrepl.trace.server": {
-          "type": "string",
-          "enum": ["off", "messages", "verbose"],
-          "default": "off",
-          "description": "Trace communication with xrepl server"
-        }
-      }
+    "engines": {
+        "vscode": "^1.85.0"
     },
-    "keybindings": [
-      {
-        "command": "xrepl.evalSelection",
-        "key": "ctrl+enter",
-        "mac": "cmd+enter",
-        "when": "editorTextFocus"
-      }
-    ]
-  },
-  "scripts": {
-    "vscode:prepublish": "npm run package",
-    "compile": "webpack",
-    "watch": "webpack --watch",
-    "package": "webpack --mode production --devtool hidden-source-map",
-    "compile-tests": "tsc -p . --outDir out",
-    "watch-tests": "tsc -p . -w --outDir out",
-    "pretest": "npm run compile-tests && npm run compile && npm run lint",
-    "lint": "eslint src --ext ts",
-    "lint:fix": "eslint src --ext ts --fix",
-    "format": "prettier --write \"src/**/*.ts\"",
-    "format:check": "prettier --check \"src/**/*.ts\"",
-    "test": "node ./out/test/runTest.js"
-  },
-  "devDependencies": {
-    "@types/vscode": "^1.85.0",
-    "@types/node": "^20.x",
-    "@types/mocha": "^10.0.6",
-    "@typescript-eslint/eslint-plugin": "^6.15.0",
-    "@typescript-eslint/parser": "^6.15.0",
-    "@vscode/test-electron": "^2.3.8",
-    "eslint": "^8.56.0",
-    "prettier": "^3.1.1",
-    "typescript": "^5.3.3",
-    "webpack": "^5.89.0",
-    "webpack-cli": "^5.1.4",
-    "ts-loader": "^9.5.1"
-  },
-  "dependencies": {
-    "@msgpack/msgpack": "^3.0.0"
-  }
+    "categories": [
+        "Programming Languages",
+        "Other"
+    ],
+    "main": "./out/extension.js",
+    "contributes": {
+        "commands": [
+            {
+                "command": "xrepl.connect",
+                "title": "Connect to xrepl Server",
+                "category": "xrepl"
+            },
+            {
+                "command": "xrepl.connectTCP",
+                "title": "Connect to xrepl (TCP)",
+                "category": "xrepl"
+            },
+            {
+                "command": "xrepl.connectUnix",
+                "title": "Connect to xrepl (UNIX Socket)",
+                "category": "xrepl"
+            },
+            {
+                "command": "xrepl.disconnect",
+                "title": "Disconnect from xrepl",
+                "category": "xrepl"
+            },
+            {
+                "command": "xrepl.evalSelection",
+                "title": "Evaluate Selection in xrepl",
+                "category": "xrepl"
+            },
+            {
+                "command": "xrepl.evalFile",
+                "title": "Evaluate Entire File in xrepl",
+                "category": "xrepl"
+            },
+            {
+                "command": "xrepl.showSessions",
+                "title": "Show xrepl Sessions",
+                "category": "xrepl"
+            }
+        ],
+        "views": {
+            "explorer": [
+                {
+                    "id": "xreplSessions",
+                    "name": "xrepl Sessions"
+                }
+            ]
+        },
+        "viewsWelcome": [
+            {
+                "view": "xreplSessions",
+                "contents": "No xrepl connection active.\n[Connect to xrepl](command:xrepl.connect)"
+            }
+        ],
+        "configuration": {
+            "title": "xrepl",
+            "properties": {
+                "xrepl.connection.type": {
+                    "type": "string",
+                    "enum": [
+                        "tcp",
+                        "unix"
+                    ],
+                    "default": "tcp",
+                    "description": "Default connection type for xrepl"
+                },
+                "xrepl.connection.tcp.host": {
+                    "type": "string",
+                    "default": "localhost",
+                    "description": "TCP host for xrepl connection"
+                },
+                "xrepl.connection.tcp.port": {
+                    "type": "number",
+                    "default": 7888,
+                    "description": "TCP port for xrepl connection"
+                },
+                "xrepl.connection.unix.socket": {
+                    "type": "string",
+                    "default": "/tmp/xrepl.sock",
+                    "description": "UNIX domain socket path for xrepl connection"
+                },
+                "xrepl.autoConnect": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "Automatically connect to xrepl on startup"
+                },
+                "xrepl.trace.server": {
+                    "type": "string",
+                    "enum": [
+                        "off",
+                        "messages",
+                        "verbose"
+                    ],
+                    "default": "off",
+                    "description": "Trace communication with xrepl server"
+                }
+            }
+        },
+        "keybindings": [
+            {
+                "command": "xrepl.evalSelection",
+                "key": "ctrl+enter",
+                "mac": "cmd+enter",
+                "when": "editorTextFocus"
+            }
+        ]
+    },
+    "scripts": {
+        "vscode:prepublish": "npm run package",
+        "clean": "rm -rf out dist *.vsix",
+        "typecheck": "tsc --noEmit",
+        "build": "npm run compile",
+        "compile": "webpack",
+        "watch": "webpack --watch",
+        "package": "webpack --mode production --devtool hidden-source-map",
+        "compile-tests": "tsc -p . --outDir out",
+        "watch-tests": "tsc -p . -w --outDir out",
+        "pretest": "npm run compile-tests && npm run compile && npm run lint",
+        "lint": "eslint src --ext ts",
+        "lint:fix": "eslint src --ext ts --fix",
+        "format": "prettier --write \"src/**/*.ts\"",
+        "format:check": "prettier --check \"src/**/*.ts\"",
+        "test": "node ./out/test/runTest.js",
+        "check": "npm run clean && npm run build && npm run typecheck && npm run lint && npm run test"
+    },
+    "devDependencies": {
+        "@types/mocha": "^10.0.6",
+        "@types/node": "^20.x",
+        "@types/vscode": "^1.85.0",
+        "@typescript-eslint/eslint-plugin": "^6.15.0",
+        "@typescript-eslint/parser": "^6.15.0",
+        "@vscode/test-electron": "^2.3.8",
+        "eslint": "^8.56.0",
+        "glob": "^11.0.3",
+        "mocha": "^11.7.4",
+        "prettier": "^3.1.1",
+        "ts-loader": "^9.5.1",
+        "typescript": "^5.3.3",
+        "webpack": "^5.89.0",
+        "webpack-cli": "^5.1.4"
+    },
+    "dependencies": {
+        "@msgpack/msgpack": "^3.0.0"
+    }
 }
