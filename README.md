@@ -20,11 +20,11 @@ VSCode extension for integrating with xrepl (network-based REPL).
 
 This extension contributes the following settings:
 
-* `xrepl.connection.type`: Default connection type (tcp/unix)
-* `xrepl.connection.tcp.host`: TCP host
-* `xrepl.connection.tcp.port`: TCP port
-* `xrepl.connection.unix.socket`: UNIX socket path
-* `xrepl.autoConnect`: Auto-connect on startup
+- `xrepl.connection.type`: Default connection type (tcp/unix)
+- `xrepl.connection.tcp.host`: TCP host
+- `xrepl.connection.tcp.port`: TCP port
+- `xrepl.connection.unix.socket`: UNIX socket path
+- `xrepl.autoConnect`: Auto-connect on startup
 
 ## Development
 
