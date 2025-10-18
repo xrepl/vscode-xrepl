@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-# @xrepl/vscode
-=======
 # xrepl for Visual Studio Code
 
 VSCode extension for integrating with xrepl (network-based REPL).
@@ -39,4 +36,3 @@ npm run watch
 ### 0.0.1
 
 Initial development release
->>>>>>> 2e0f775 (Initial project setup for @xrepl/vscode extension)
