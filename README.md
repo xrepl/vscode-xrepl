@@ -1,6 +1,11 @@
 # xrepl for Visual Studio Code
 
-VSCode extension for integrating with xrepl (network-based REPL).
+[![Build Status][gh-actions-badge]][gh-actions]
+[![Tags][github-tags-badge]][github-tags]
+
+[![Project Logo][logo]][logo-large]
+
+*VSCode extension for integrating with xrepl (network-based REPL)*
 
 ## Features
 
@@ -31,8 +36,11 @@ npm run watch
 # Press F5 to launch Extension Development Host
 ```
 
-## Release Notes
+[//]: ---Named-Links---
 
-### 0.0.1
-
-Initial development release
+[logo]: https://raw.githubusercontent.com/xrepl/xrepl/refs/heads/main/priv/images/logo-v1-x250.png
+[logo-large]: https://raw.githubusercontent.com/xrepl/xrepl/refs/heads/main/priv/images/logo-v1-x4800.png
+[gh-actions-badge]: https://github.com/xrepl/vscode-xrepl/actions/workflows/cicd.yml/badge.svg
+[gh-actions]: https://github.com/ORG/xrepl/vscode-xrepl/actions/workflows/cicd.yml
+[github-tags]: https://github.com/ORG/xrepl/tags
+[github-tags-badge]: https://img.shields.io/github/tag/lfe/xrepl.svg
